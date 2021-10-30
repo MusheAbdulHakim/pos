@@ -109,6 +109,14 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
+                                    <label for="lockscreen">LockScreen Time</label>
+                                    <input type="number" class="form-control" name="lockscreen" value="{{auth()->user()->lockout_time}}" id="email">
+                                </div>
+                            </div> <!-- end col -->
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
                                     <label for="avatar">Avatar</label>
                                     <input type="file" name="avatar" class="form-control" id="avatar">
                                 </div>
