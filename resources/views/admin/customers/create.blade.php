@@ -11,8 +11,8 @@
         <div class="card-body">
             <h4 class="card-title">Create Customer</h4>
             <form action="{{route('customers.store')}}" method="post" class="needs-validation" novalidate>
+                @csrf
                 <div class="modal-body">
-                    @csrf
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input id="name" type="text" name="name" class="form-control" required>
