@@ -28,8 +28,8 @@ class UserController extends Controller
                         return '<img src="'.asset('storage/users/'.$user->avatar).'" class="rounded-circle avatar-md" />';
                     })
                     ->addColumn('action',function ($user){
-                        $editbtn = '<a href="'.route('user.edit',$user->id).'" class="edit"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>';
-                        $deletebtn = '<a data-id="'.$user->id.'" data-route="'.route('user.destroy').'" href="javascript:void(0)" id="deletebtn"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a>';
+                        $editbtn = '<a href="'.route('users.edit',$user->id).'" class="edit"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>';
+                        $deletebtn = '<a data-id="'.$user->id.'" data-route="'.route('users.destroy',$user->id).'" href="javascript:void(0)" id="deletebtn"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a>';
                         $btn = $editbtn.' '.$deletebtn;
                         return $btn;
                     })
@@ -66,6 +66,7 @@ class UserController extends Controller
         $this->validate($request,[
             'name' => 'required|min:5|max:200',
             'email' => 'required|email',
+            'lockscreen' => 'nullable|integer',
             'username' => 'required|min:3|max:200',
             'password' => 'required|min:3|max:255|confirmed',
             'avatar' => 'nullable|file|image|mimes:jpg,jpeg,png,gif'
@@ -80,6 +81,7 @@ class UserController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'avatar' => $imageName,
+            'lockout_time' => $request->lockscreen,
             'password' => Hash::make($request->password),
         ]);
         $user->assignRole($request->role);
