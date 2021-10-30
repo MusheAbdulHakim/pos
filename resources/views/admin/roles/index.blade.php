@@ -29,7 +29,7 @@
                         <td>{{$role->name}}</td>
                         <td>
                             @foreach ($role->getAllPermissions() as $permission)
-                                <span class="badge">{{ $permission->name }}</span>
+                                <span class="badge badge-primary">{{ $permission->name }}</span>
                             @endforeach
                         </td>
                         <td class="text-center">
