@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\BackupController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\CustomerTypeController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\Admin\ExpenseCategoryController;
 use App\Http\Controllers\Admin\ExpenseController;
 use App\Http\Controllers\Admin\FilemanagerController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Models\CustomerType;
@@ -35,6 +37,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('logout',[LoginController::class,'logout'])->name('logout');
     Route::get('login/locked', [LoginController::class,'locked'])->name('lockscreen');
     Route::post('login/locked', [LoginController::class,'unlock'])->name('login.unlock');
+
+    Route::get('brand',[BrandController::class,'index'])->name('brand');
+    Route::post('brand',[BrandController::class,'store']);
+    Route::put('brand',[BrandController::class,'update']);
+    Route::delete('brand',[BrandController::class,'destroy']);
 
     Route::get('customer-type',[CustomerTypeController::class,'index'])->name('customer-type');
     Route::post('customer-type',[CustomerTypeController::class,'store']);
@@ -61,6 +68,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('customers',CustomerController::class);
     Route::resource('suppliers',SupplierController::class);
     Route::resource('expenses',ExpenseController::class);
+
+    Route::get('settings',[SettingController::class,'index'])->name('settings');
 
     Route::get('backup', [BackupController::class,'index'])->name('backup.index');
     Route::put('backup/create', [BackupController::class,'create'])->name('backup.store');

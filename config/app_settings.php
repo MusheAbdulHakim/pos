@@ -58,7 +58,61 @@ return [
                 ],
             ]
         ],
-        
+        'theme' =>[
+            'title' => 'Theme Settings',
+            'descriptions' => 'Application theme settings.', // (optional)
+            'inputs' => [
+                [
+                    'name' => 'mode',
+                    'type' => 'text',
+                    'label' => 'Theme Mode',
+                    'placeholder' => 'enter dark to use dark mode',
+                    'class' => 'form-control',
+                    'style' => '', // any inline styles
+                    'rules' => 'required|max:10', // validation rules for this input
+                    'value' => 'light', // any default value
+                    'hint' => 'you can enter dark or leave at default',
+                ],
+                [
+                    'name' => 'maintenance_mode',
+                    'type' => 'boolean',
+                    'label' => 'Enable Maintenance',
+                    'value' => false,
+                    'class' => 'form-control',
+                    // optional fields
+                    'options' => [
+                        '1' => 'Yes',
+                        '0' => 'No',
+                    ],
+                ],
+                [
+                    'name' => 'rtl',
+                    'type' => 'boolean',
+                    'label' => 'Enable Rtl',
+                    'value' => false,
+                    'class' => 'form-control',
+                    // optional fields
+                    'options' => [
+                        '1' => 'Yes',
+                        '0' => 'No',
+                    ],
+                ],
+                [
+                    'type' => 'select',
+                    'name' => 'layout',
+                    'label' => 'Sidebar Layout',
+                    'rules' => '',
+                    'value' => 'detached',
+                    'class' => 'form-control',
+                    'options' => [
+                        'detached' => 'Default',
+                        'compact' => 'Compact',
+                        'icon' => 'Icon',
+                        'boxed' => 'Boxed'
+                    ]
+                ],
+            ]
+        ]
     ],
 
     // Setting page url, will be used for get and post request
@@ -89,7 +143,7 @@ return [
     'submit_success_message' => 'Settings has been saved.',
 
     // Remove any setting which declaration removed later from sections
-    'remove_abandoned_settings' => false,
+    // 'remove_abandoned_settings' => false,
 
     // Controller to show and handle save setting
     'controller' => '\App\Http\Controllers\Admin\SettingController',
