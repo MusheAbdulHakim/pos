@@ -33,8 +33,18 @@
     <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
     @endif
 </head>
-
+@if (AppSettings::get('layout') == 'detached')  
 <body data-layout="detached" data-topbar="colored">
+@endif
+@if (AppSettings::get('layout') == 'icon')  
+<body data-layout="detached" data-topbar="colored" data-keep-enlarged="true" class="vertical-collpsed">
+@endif
+@if (AppSettings::get('layout') == 'boxed')  
+<body data-layout="detached" data-topbar="colored" data-keep-enlarged="true" class="vertical-collpsed" data-layout-size="boxed">
+@endif
+@if (AppSettings::get('layout') == 'compact')  
+<body data-layout="detached" data-topbar="colored" data-sidebar-size="small">
+@endif
 
     <x-preloader.spinner-chase />
 

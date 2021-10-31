@@ -25,7 +25,7 @@
 
         <div class="row m-b-md">
             <div class="col-md-12">
-                <button class="btn-primary btn">
+                <button class="btn-primary btn  btn-block">
                     {{ Arr::get($settingsUI, 'submit_btn_text', 'Save Settings') }}
                 </button>
             </div>

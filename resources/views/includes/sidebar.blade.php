@@ -50,7 +50,6 @@
         </li>
         @endcan
 
-        <li class="menu-title">Authentication</li>
         @can('view-authentication')
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -89,6 +88,7 @@
             </a>
             <ul class="sub-menu" aria-expanded="false">
                <li><a href="{{route('settings')}}">General Setting</a></li>
+               <li><a href="{{route('brand')}}">Brand</a></li>
             </ul>
         </li>
     </ul>
