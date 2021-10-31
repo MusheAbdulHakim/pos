@@ -6,7 +6,7 @@
     <title>{{ucwords(config('app.name'))}} - {{ucwords($title ?? '')}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{!empty(AppSettings::get('logo')) ? asset('storage/'.AppSettings::get('logo')): asset('assets/images/favicon.ico')}}">
     <!-- csrf token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Page Css -->
