@@ -18,7 +18,7 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         $title = 'customers';
-        
+
         if($request->ajax()){
             $data = Customer::get();
             return DataTables::of($data)
@@ -58,12 +58,12 @@ class CustomerController extends Controller
             'title','customertypes'
         ));
     }
-    
+
 
     /**
      * Store a newly created resource in storage.
      *
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -89,7 +89,7 @@ class CustomerController extends Controller
      /**
      * show form to edit resource in storage.
      *
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Customer $customer)
