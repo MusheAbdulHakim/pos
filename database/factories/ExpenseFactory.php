@@ -24,7 +24,7 @@ class ExpenseFactory extends Factory
     public function definition()
     {
         return [
-            'expense_category_id' => ExpenseCategory::get('id'),
+            'expense_category_id' => ExpenseCategory::first(),
             'amount' => random_int(1,8),
             'comment' => 'Hey this is a comment',
         ];
