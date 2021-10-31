@@ -9,7 +9,46 @@
                 <span>Dashboard</span>
             </a>
         </li>
-        
+        @can('view-expenses')
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="fas fa-wallet"></i>
+                <span>Expense</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+               @can('view-expense-categories')
+               <li><a href="{{route('expense.category')}}">Expense Category</a></li>
+               @endcan
+               @can('view-expenses')
+               <li><a href="{{route('expenses.index')}}">Expenses</a></li>
+               @endcan
+               
+            </ul>
+        </li>
+        @endcan
+        @can('view-people')
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="fas fa-users"></i>
+                <span>People</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+               @can('view-customer-types')
+               <li><a href="{{route('customer-type')}}">Customer Type</a></li>
+               @endcan
+               @can('view-customers')
+               <li><a href="{{route('customers.index')}}">Customers</a></li>
+               @endcan
+               @can('view-suppliers')
+               <li>
+                    <a href="{{route('suppliers.index')}}" class=" waves-effect">
+                        <span>Suppliers</span>
+                    </a>
+                </li>
+                @endcan
+            </ul>
+        </li>
+        @endcan
 
         <li class="menu-title">Authentication</li>
         @can('view-authentication')

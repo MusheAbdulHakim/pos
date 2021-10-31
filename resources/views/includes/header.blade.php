@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- user profile -->
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect"
                         id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true"
@@ -142,11 +142,7 @@
                         <!-- item-->
                         <a class="dropdown-item" href="{{route('profile')}}"><i class="bx bx-user font-size-16 align-middle mr-1"></i> Profile</a>
 
-                        <a class="dropdown-item d-block" href="#"><span
-                                class="badge badge-success float-right">11</span><i
-                                class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
-                        <a class="dropdown-item" href="{{route('lockscreen')}}"><i
-                                class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
+                        <a class="dropdown-item d-block" href="#"><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
                         <div class="dropdown-item text-danger">
                             <form action="{{route('logout')}}" method="post">
                             @csrf
@@ -155,12 +151,6 @@
                         </div>
                         
                     </div>
-                </div>
-
-                <div class="dropdown d-inline-block">
-                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                        <i class="mdi mdi-settings-outline"></i>
-                    </button>
                 </div>
 
             </div>
