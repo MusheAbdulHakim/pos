@@ -26,7 +26,7 @@
                     </thead>
 
                     <tbody>
-                        
+
                     </tbody>
                 </table>
 
@@ -39,6 +39,13 @@
     <script>
         $(document).ready(function(){
             var table = $('#datatable').DataTable({
+              dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ],
                 processing: true,
                 serverSide: true,
                 ajax: "{{route('suppliers.index')}}",
