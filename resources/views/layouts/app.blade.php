@@ -12,7 +12,11 @@
     <!-- Page Css -->
     @stack('page-css')
     <!-- Bootstrap Css -->
+    @if (ucfirst(AppSettings::get('mode')) == 'Dark')
+    <link href="{{asset('assets/css/bootstrap-dark.min.css')}}" id="bootstrap-style-dark" rel="stylesheet" type="text/css" />
+    @else
     <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    @endif
     <!-- Icons Css -->
     <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Toastr Css-->
@@ -20,11 +24,19 @@
     <!-- Sweet Alert-->
     <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
+    @if (AppSettings::get('rtl') == '1')
+    <link href="{{asset('assets/css/app-rtl.min.css')}}" id="app-style-rtl" rel="stylesheet" type="text/css" />
+    @endif
+    @if(ucfirst(AppSettings::get('mode')) == 'Dark')
+    <link href="{{asset('assets/css/app-dark.min.css')}}" id="app-style-dark" rel="stylesheet" type="text/css" />
+    @else
     <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
-
+    @endif
 </head>
 
 <body data-layout="detached" data-topbar="colored">
+
+    <x-preloader.spinner-chase />
 
     <div class="container-fluid">
         <!-- Begin page -->

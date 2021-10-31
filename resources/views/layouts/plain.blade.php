@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <x-preloader.spinner-chase />
     <div class="home-btn d-none d-sm-block">
         <a href="{{route('dashboard')}}" class="text-dark"><i class="fas fa-home h2"></i></a>
     </div>
