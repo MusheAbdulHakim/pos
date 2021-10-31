@@ -10,7 +10,11 @@
         <div class="card-body">
             <h4 class="card-title">Create User</h4>
 
+<<<<<<< HEAD
             <form action="{{route('users.update',$user)}}" method="post" enctype="multipart/form-data">
+=======
+            <form action="{{route('user.update',$user)}}" method="post" enctype="multipart/form-data">
+>>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
                 @csrf
                 @method("PUT")
                 <div class="form-group">

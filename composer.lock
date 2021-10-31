@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "37cb6bc9c5d35958a7fb40b0fceae434",
+=======
+    "content-hash": "b23d845fc82c5c6dc537e76f2d5eb3ee",
+>>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3392,6 +3396,7 @@
             "time": "2021-10-10T13:37:39+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "qcod/laravel-app-settings",
             "version": "1.4.0",
             "source": {
@@ -3533,6 +3538,8 @@
             "time": "2020-09-14T01:17:40+00:00"
         },
         {
+=======
+>>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {

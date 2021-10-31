@@ -109,6 +109,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <label for="lockscreen">LockScreen Time</label>
                                     <input type="number" class="form-control" name="lockscreen" value="{{auth()->user()->lockout_time}}" id="email">
                                 </div>
@@ -117,6 +118,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
+=======
+>>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
                                     <label for="avatar">Avatar</label>
                                     <input type="file" name="avatar" class="form-control" id="avatar">
                                 </div>
@@ -178,4 +181,8 @@
 
 @push('page-js')
    
+<<<<<<< HEAD
 @endpush
+=======
+@endpush
+>>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
