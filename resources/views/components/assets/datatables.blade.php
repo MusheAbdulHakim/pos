@@ -22,10 +22,5 @@
     <!-- Responsive examples -->
     <script src="{{asset('assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}"></script>
-<<<<<<< HEAD
-=======
-    <!-- Datatable init js -->
-    {{-- <script src="{{asset('assets/js/pages/datatables.init.js')}}"></script>  --}}
->>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
 @endpush
 

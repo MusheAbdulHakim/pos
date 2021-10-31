@@ -29,11 +29,7 @@
                         <td>{{$role->name}}</td>
                         <td>
                             @foreach ($role->getAllPermissions() as $permission)
-<<<<<<< HEAD
                                 <span class="badge badge-primary">{{ $permission->name }}</span>
-=======
-                                <span class="pill">{{ $permission->name }}</span>
->>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
                             @endforeach
                         </td>
                         <td class="text-center">

@@ -11,10 +11,7 @@
         "laravel/framework": "^8.65",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-<<<<<<< HEAD
         "qcod/laravel-app-settings": "^1.4",
-=======
->>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
         "spatie/laravel-backup": "^6.16",
         "spatie/laravel-permission": "^5.1",
         "unisharp/laravel-filemanager": "^2.3",

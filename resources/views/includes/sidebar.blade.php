@@ -9,7 +9,6 @@
                 <span>Dashboard</span>
             </a>
         </li>
-<<<<<<< HEAD
         @can('view-expenses')
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -50,9 +49,6 @@
             </ul>
         </li>
         @endcan
-=======
-        
->>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
 
         <li class="menu-title">Authentication</li>
         @can('view-authentication')

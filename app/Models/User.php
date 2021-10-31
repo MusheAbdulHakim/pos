@@ -25,10 +25,7 @@ class User extends Authenticatable
         'username',
         'avatar',
         'password',
-<<<<<<< HEAD
         'lockout_time'
-=======
->>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
     ];
 
     /**

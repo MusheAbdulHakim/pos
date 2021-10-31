@@ -169,14 +169,10 @@
             case 'error':
                 toastr.error("{{ Session::get('message') }}");
                 break;
-<<<<<<< HEAD
             
             case 'danger':
                 toastr.error("{{ Session::get('message') }}");
                 break;
-=======
-
->>>>>>> e7e2e7a43cfaa6a7bd073ba9be0df634ee271e5a
             
         }
         @endif
