@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>{{ucwords(config('app.name'))}} - {{$title ?? ''}}</title>
+    <title>{{ucwords(!empty(AppSettings::get('app_name')) ? AppSettings::get('app_name'): config('app.name'))}} - {{ucwords($title ?? '')}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{!empty(AppSettings::get('logo')) ? asset('storage/'.AppSettings::get('logo')):asset('assets/images/favicon.ico')}}">
