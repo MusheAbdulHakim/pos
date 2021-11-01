@@ -30,7 +30,7 @@ class CustomerTypeController extends Controller
                     ->rawColumns(['action'])
                     ->make(true);
         }
-        return view('admin.customertype.index',compact(
+        return view('admin.customers.type',compact(
             'title',
         ));
     }

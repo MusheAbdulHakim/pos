@@ -39,7 +39,7 @@ class ExpenseCategoryController extends Controller
                     ->make(true);
         }
         
-        return view('admin.expensecategory.index',compact(
+        return view('admin.expenses.category',compact(
             'title',
         ));
     }
