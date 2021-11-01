@@ -152,7 +152,13 @@
                         
                     </div>
                 </div>
-
+                <div class="dropdown d-inline-block">
+                    <a href="{{route('settings')}}">
+                        <button type="button" class="btn header-item noti-icon  waves-effect">
+                            <i class="mdi mdi-settings-outline"></i>
+                        </button>
+                    </a>
+                </div>
             </div>
             <div>
                 <!-- LOGO -->
