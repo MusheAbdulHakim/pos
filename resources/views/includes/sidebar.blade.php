@@ -89,6 +89,8 @@
             <ul class="sub-menu" aria-expanded="false">
                <li><a href="{{route('settings')}}">General Setting</a></li>
                <li><a href="{{route('brand')}}">Brand</a></li>
+               <li><a href="{{route('tax')}}">Tax</a></li>
+               <li><a href="{{route('unit')}}">Unit</a></li>
             </ul>
         </li>
     </ul>

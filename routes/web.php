@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\FilemanagerController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\TaxController;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Models\CustomerType;
 
@@ -42,6 +44,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('brand',[BrandController::class,'store']);
     Route::put('brand',[BrandController::class,'update']);
     Route::delete('brand',[BrandController::class,'destroy']);
+
+    Route::get('tax',[TaxController::class,'index'])->name('tax');
+    Route::post('tax',[TaxController::class,'store']);
+    Route::put('tax',[TaxController::class,'update']);
+    Route::delete('tax',[TaxController::class,'destroy']);
+
+    Route::get('unit',[UnitController::class,'index'])->name('unit');
+    Route::post('unit',[UnitController::class,'store']);
+    Route::put('unit',[UnitController::class,'update']);
+    Route::delete('unit',[UnitController::class,'destroy']);
 
     Route::get('customer-type',[CustomerTypeController::class,'index'])->name('customer-type');
     Route::post('customer-type',[CustomerTypeController::class,'store']);
