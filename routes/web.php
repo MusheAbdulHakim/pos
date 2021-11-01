@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ExpenseCategoryController;
 use App\Http\Controllers\Admin\ExpenseController;
 use App\Http\Controllers\Admin\FilemanagerController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\TaxController;
@@ -54,6 +55,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('unit',[UnitController::class,'store']);
     Route::put('unit',[UnitController::class,'update']);
     Route::delete('unit',[UnitController::class,'destroy']);
+
+    Route::get('product-category',[ProductCategoryController::class,'index'])->name('product.category');
+    Route::post('product-category',[ProductCategoryController::class,'store']);
+    Route::put('product-category',[ProductCategoryController::class,'update']);
+    Route::delete('product-category',[ProductCategoryController::class,'destroy']);
 
     Route::get('customer-type',[CustomerTypeController::class,'index'])->name('customer-type');
     Route::post('customer-type',[CustomerTypeController::class,'store']);
