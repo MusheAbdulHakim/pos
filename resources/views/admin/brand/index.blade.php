@@ -3,7 +3,9 @@
 <x-assets.datatables />
 
 @section('breadcrumb')
+@can('create-brand')
 <x-buttons.primary :text="'create brand'" :target="'#addBrand'"  />
+@endcan
 @endsection
 
 @section('content')

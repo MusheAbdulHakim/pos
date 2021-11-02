@@ -4,7 +4,7 @@
 
 @section('breadcrumb')
 
-@can('create-expense')
+@can('create-product')
 <x-buttons.primary :text="'create product'" :link="route('products.create')"  />
 @endcan
 

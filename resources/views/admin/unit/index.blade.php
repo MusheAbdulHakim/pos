@@ -3,7 +3,9 @@
 <x-assets.datatables />
 
 @section('breadcrumb')
+@can('create-unit')
 <x-buttons.primary :text="'create unit'" :target="'#addUnit'"  />
+@endcan
 @endsection
 
 @section('content')

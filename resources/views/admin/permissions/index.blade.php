@@ -3,7 +3,9 @@
 <x-assets.datatables />
 
 @section('breadcrumb')
+@can('create-permission')
 <x-buttons.primary :text="'create permission'" :target="'#addPermission'"  />
+@endcan
 @endsection
 
 @section('content')

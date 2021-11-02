@@ -3,7 +3,9 @@
 <x-assets.datatables />
 
 @section('breadcrumb')
+@can("create-tax")
 <x-buttons.primary :text="'create tax'" :target="'#addTax'"  />
+@endcan
 @endsection
 
 @section('content')

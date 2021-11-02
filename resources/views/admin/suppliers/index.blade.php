@@ -3,7 +3,9 @@
 <x-assets.datatables />
 
 @section('breadcrumb')
+@can('create-supplier')
 <x-buttons.primary :text="'create supplier'" :link="route('suppliers.create')"  />
+@endcan
 @endsection
 
 @section('content')

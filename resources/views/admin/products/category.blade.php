@@ -3,7 +3,7 @@
 <x-assets.datatables />
 
 @section('breadcrumb')
-@can('create-expense-category')
+@can('create-product-category')
 <x-buttons.primary :text="'create category'" :target="'#addCategory'"  />
 @endcan
 @endsection

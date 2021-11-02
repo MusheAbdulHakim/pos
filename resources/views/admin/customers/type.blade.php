@@ -3,7 +3,9 @@
 <x-assets.datatables />
 
 @section('breadcrumb')
+@can('create-customer-type')
 <x-buttons.primary :text="'create customer type'" :target="'#addCustomerType'"  />
+@endcan
 @endsection
 
 @section('content')
