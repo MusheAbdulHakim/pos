@@ -47,10 +47,10 @@ class ProductController extends Controller
                 ->addColumn('action',function ($row){
                     $editbtn = '<a data-id="'.$row->id.'" href="'.route('products.edit',$row->id).'" class="edit"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>';
                     $deletebtn = '<a data-id="'.$row->id.'" data-route="'.route('products.destroy',$row->id).'" href="javascript:void(0)" id="deletebtn"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a>';
-                    if(!auth()->user()->hasPermissionTo('edit-expense-category')){
+                    if(!auth()->user()->hasPermissionTo('edit-product')){
                         $editbtn = '';
                     }
-                    if(!auth()->user()->hasPermissionTo('destroy-expense-category')){
+                    if(!auth()->user()->hasPermissionTo('destroy-product')){
                         $deletebtn = '';
                     }
 

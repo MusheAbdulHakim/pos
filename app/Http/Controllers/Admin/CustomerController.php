@@ -31,6 +31,12 @@ class CustomerController extends Controller
                     ->addColumn('action',function ($row){
                         $editbtn = '<a href="'.route('customers.edit',$row->id).'" class="edit"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>';
                         $deletebtn = '<a data-id="'.$row->id.'" data-route="'.route('customers.destroy',$row->id).'" href="javascript:void(0)" id="deletebtn"><button class="btn btn-danger"><i class="fas fa-trash"></i></button></a>';
+                        if(!auth()->user()->hasPermissionTo('edit-customer')){
+                            $editbtn = '';
+                        }
+                        if(!auth()->user()->hasPermissionTo('destroy-customer')){
+                            $deletebtn = '';
+                        }
                         $btn = $editbtn.' '.$deletebtn;
                         return $btn;
                     })
