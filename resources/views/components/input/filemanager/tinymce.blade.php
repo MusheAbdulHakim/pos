@@ -1,10 +1,10 @@
-@props(['name' => $name])
+@props(['name' => $name, 'value' => $value ??''])
 
 @push('page-css')
     
 @endpush
 
-<textarea id="my-textarea" name="{{$name}}"></textarea>
+<textarea id="my-textarea" name="{{$name}}">{{$value}}</textarea>
 
 @push('page-js')
 <!--tinymce js-->
@@ -16,8 +16,8 @@
         plugins: [
           'advlist autolink lists link image charmap print preview hr anchor pagebreak',
           'searchreplace wordcount visualblocks visualchars code fullscreen',
-          'insertdatetime media nonbreaking save table contextmenu directionality',
-          'emoticons template paste textcolor colorpicker textpattern',
+          'insertdatetime media nonbreaking save table directionality',
+          'emoticons template paste textpattern',
         ],
         toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media',
         relative_urls: false,

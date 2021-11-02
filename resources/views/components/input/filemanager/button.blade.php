@@ -1,6 +1,6 @@
 @props(['name' => $name])
 <div class="input-group">
-    <input type="text" class="form-control" name="{{$name}}"
+    <input id="image_label" type="text" class="form-control" name="{{$name}}"
            aria-label="Image" aria-describedby="button-image">
     <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="button" id="button-image">Select</button>
