@@ -1,27 +1,28 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\CustomerType;
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\TaxController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Admin\BackupController;
 use App\Http\Controllers\Admin\BrandController;
-use App\Http\Controllers\Admin\CustomerController;
-use App\Http\Controllers\Admin\CustomerTypeController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ExpenseCategoryController;
+use App\Http\Controllers\Admin\BackupController;
 use App\Http\Controllers\Admin\ExpenseController;
-use App\Http\Controllers\Admin\FilemanagerController;
-use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\SupplierController;
-use App\Http\Controllers\Admin\TaxController;
-use App\Http\Controllers\Admin\UnitController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\FilemanagerController;
+use App\Http\Controllers\Admin\CustomerTypeController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Models\CustomerType;
+use App\Http\Controllers\Admin\ExpenseCategoryController;
+use App\Http\Controllers\Admin\ProductCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,6 +87,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('customers',CustomerController::class);
     Route::resource('suppliers',SupplierController::class);
     Route::resource('expenses',ExpenseController::class);
+    Route::resource('products', ProductController::class);
 
     Route::get('settings',[SettingController::class,'index'])->name('settings');
 
@@ -93,11 +95,11 @@ Route::middleware(['auth'])->group(function () {
     Route::put('backup/create', [BackupController::class,'create'])->name('backup.store');
     Route::get('backup/download/{file_name?}', [BackupController::class,'download'])->name('backup.download');
     Route::delete('backup/delete/{file_name?}', [BackupController::class,'destroy'])->where('file_name', '(.*)')->name('backup.destroy');
+
+
 });
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+
 
 Route::middleware(['guest'])->group(function () {
     Route::get('login',[LoginController::class,'index'])->name('login');
