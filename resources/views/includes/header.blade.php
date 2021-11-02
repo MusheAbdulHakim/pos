@@ -141,8 +141,9 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <!-- item-->
                         <a class="dropdown-item" href="{{route('profile')}}"><i class="bx bx-user font-size-16 align-middle mr-1"></i> Profile</a>
-
-                        <a class="dropdown-item d-block" href="#"><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
+                        @can('view-settings')
+                        <a class="dropdown-item d-block" href="{{route('settings')}}"><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
+                        @endcan
                         <div class="dropdown-item text-danger">
                             <form action="{{route('logout')}}" method="post">
                             @csrf
@@ -152,6 +153,7 @@
                         
                     </div>
                 </div>
+                @can('view-settings')
                 <div class="dropdown d-inline-block">
                     <a href="{{route('settings')}}">
                         <button type="button" class="btn header-item noti-icon  waves-effect">
@@ -159,6 +161,7 @@
                         </button>
                     </a>
                 </div>
+                @endcan
             </div>
             <div>
                 <!-- LOGO -->
