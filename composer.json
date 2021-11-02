@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "alexusmai/laravel-file-manager": "^2.5",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.65",
@@ -14,7 +15,6 @@
         "qcod/laravel-app-settings": "^1.4",
         "spatie/laravel-backup": "^6.16",
         "spatie/laravel-permission": "^5.1",
-        "unisharp/laravel-filemanager": "^2.3",
         "yajra/laravel-datatables": "^1.5"
     },
     "require-dev": {
