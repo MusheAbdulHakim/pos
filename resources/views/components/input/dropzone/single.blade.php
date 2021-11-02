@@ -1,3 +1,4 @@
+@props(['name' => $name ?? 'image','route' => $route])
 @push('page-css')
     <!-- Plugins css -->
     <link href="{{asset('assets/libs/dropzone/min/dropzone.min.css')}}" rel="stylesheet" type="text/css" />
@@ -6,7 +7,7 @@
 
 <div class="dropzone">
     <div class="fallback">
-        <input name="file" type="file" >
+        <input name="{{$name}}" type="file" >
     </div>
     <div class="dz-message needsclick">
         <div class="mb-3">
@@ -21,19 +22,16 @@
     <script src="{{asset('assets/libs/dropzone/min/dropzone.min.js')}}"></script>
     <script>
         Dropzone.options.fileDropzone = {
-          url: 'route',
+          url: '{{$route}}',
           acceptedFiles: ".jpeg,.jpg,.png,.gif",
           addRemoveLinks: true,
           maxFilesize: 8,
-          headers: {
-          'X-CSRF-TOKEN': "{{ csrf_token() }}"
-          },
           removedfile: function(file)
           {
             var name = file.upload.filename;
             $.ajax({
               type: 'POST',
-              url: '{{ route('file.remove') }}',
+              url: '{{ $route }}',
               data: { "_token": "{{ csrf_token() }}", name: name},
               success: function (data){
                   console.log("File has been successfully removed!!");
