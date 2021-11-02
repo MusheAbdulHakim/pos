@@ -9,7 +9,26 @@
                 <span>Dashboard</span>
             </a>
         </li>
-        @can('view-expenses')
+        @can('view-product-categories','view-product')
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="fas fa-list"></i>
+                <span>Product</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+                @can('view-product-categories')
+               <li><a href="{{route('product.category')}}">Category</a></li>
+               @endcan
+               @can('view-products')
+               <li><a href="{{route('products.index')}}">Product List</a></li>
+                @endcan
+                @can('create-product')
+               <li><a href="{{route('products.create')}}">Add Product</a></li>
+                @endcan
+            </ul>
+        </li>
+        @endcan
+        @can('view-expense-categories','view-expenses')
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="fas fa-wallet"></i>
@@ -87,10 +106,18 @@
                 <span>Settings</span>
             </a>
             <ul class="sub-menu" aria-expanded="false">
-               <li><a href="{{route('settings')}}">General Setting</a></li>
+               @can('view-settings')
+                <li><a href="{{route('settings')}}">General Setting</a></li>
+               @endcan
+               @can('view-brands')
                <li><a href="{{route('brand')}}">Brand</a></li>
+               @endcan
+               @can('view-taxes')
                <li><a href="{{route('tax')}}">Tax</a></li>
+               @endcan
+               @can('view-units')
                <li><a href="{{route('unit')}}">Unit</a></li>
+               @endcan
             </ul>
         </li>
     </ul>
