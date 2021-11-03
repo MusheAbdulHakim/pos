@@ -23,6 +23,7 @@ class RolePermissionSeeder extends Seeder
             'view-taxes','create-tax','edit-tax','destroy-tax',
             'view-brands','create-brand','edit-brand','destroy-brand','view-settings',
             'view-products','create-product','edit-product','destroy-product',
+            'view-purchases','create-purchase','edit-purchase','destroy-purchase',
             'view-expense-categories','create-expense-category','edit-expense-category','destroy-expense-category',
             'view-expenses','create-expense','edit-expense','destroy-expense',
             'view-people','view-customer-types','create-customer-type','edit-customer-type','destroy-customer-type',
