@@ -8,5 +8,6 @@
 @endsection
 
 @push('page-js')
-    
+<!-- Chart JS -->
+<script src="{{asset('assets/libs/chart.js/Chart.bundle.min.js')}}"></script>
 @endpush
