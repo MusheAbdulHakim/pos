@@ -134,7 +134,7 @@
                         id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <img class="rounded-circle header-profile-user"
-                            src="{{!empty(auth()->user()->avatar) ? asset('storage/users/'.auth()->user()->avatar): asset('assets/images/users/avatar-2.jpg')}}" alt="Avatar">
+                            src="{{!empty(auth()->user()->avatar) ? asset('storage/users/'.auth()->user()->avatar) : asset('assets/images/users/avatar-2.jpg')}}" alt="Avatar">
                         <span class="d-none d-xl-inline-block ml-1">{{auth()->user()->username}}</span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                     </button>

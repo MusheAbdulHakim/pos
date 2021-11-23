@@ -28,6 +28,37 @@
             </ul>
         </li>
         @endcan
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="mdi mdi-credit-card"></i>
+                <span>Purchase</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+               @can('view-purchases')
+               <li><a href="{{route('purchases.index')}}">Purchase List</a></li>
+                @endcan
+                @can('create-purchase')
+               <li><a href="{{route('purchases.create')}}">Add Purchase</a></li>
+                @endcan
+            </ul>
+        </li>
+        <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                <i class="mdi mdi-cart"></i>
+                <span>Sale</span>
+            </a>
+            <ul class="sub-menu" aria-expanded="false">
+               @can('view-sales')
+               <li><a href="{{route('purchases.index')}}">Sale List</a></li>
+                @endcan
+                @can('create-sale')
+               <li><a href="{{route('purchases.create')}}">Add Sale</a></li>
+                @endcan
+                @can('view-pos')
+                <li><a href="{{route('purchases.create')}}">Pos</a></li>
+                @endcan
+            </ul>
+        </li>
         @can('view-expense-categories','view-expenses')
         <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
