@@ -73,18 +73,7 @@ return [
                     'value' => 'light', // any default value
                     'hint' => 'you can enter dark or leave at default',
                 ],
-                [
-                    'name' => 'maintenance_mode',
-                    'type' => 'boolean',
-                    'label' => 'Enable Maintenance',
-                    'value' => false,
-                    'class' => 'form-control',
-                    // optional fields
-                    'options' => [
-                        '1' => 'Yes',
-                        '0' => 'No',
-                    ],
-                ],
+               
                 [
                     'name' => 'rtl',
                     'type' => 'boolean',
