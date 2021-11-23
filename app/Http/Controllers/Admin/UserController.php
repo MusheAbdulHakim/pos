@@ -144,6 +144,9 @@ class UserController extends Controller
             'avatar' => $imageName,
             'password' => $password,
         ]);
+        foreach($user->getRoleNames() as $userRole){
+            $user->removeRole($userRole);
+        }
         $user->assignRole($request->role);
         $notification = notify('user updated successfully');
         return redirect()->route('users.index')->with($notification);
@@ -161,6 +164,7 @@ class UserController extends Controller
             'name' => 'required|min:5|max:200',
             'email' => 'required|email',
             'username' => 'nullable|min:3|max:200',
+            'lockscreen' => 'nullable|integer',
             'avatar' => 'nullable|file|image|mimes:jpg,jpeg,png,gif'
         ]);
         $imageName = $user->avatar;
@@ -173,6 +177,7 @@ class UserController extends Controller
             'username' => $request->username,
             'email' => $request->email,
             'avatar' => $imageName,
+            'lockout_time' => $request->lockscreen,
         ]);
         $notification = notify('profile updated successfully');
         return redirect()->route('profile')->with($notification);
