@@ -70,7 +70,7 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label class="control-label">Expiry Date</label>
-                                        <input type="date" name="expiry_date" class="form-control" value="{{old('expiry_date')}}">
+                                        <x-input.datetimepicker.datepicker name="expiry_date" />
                                     </div>
                                 </div> 
 
@@ -108,11 +108,10 @@
 <script src="{{asset('assets/libs/jquery.repeater/jquery.repeater.min.js')}}"></script>
 <script>
     $(document).ready(function(){
-        var path = "{{ route('autocomplete')}}";
+        var path = "{{route('purchase-autocomplete')}}";
         $('input.typeahead').typeahead({
             source:  function (query, process) {
             return $.get(path, { query: query }, function (data) {
-                    console.log(Object.keys(data))
                     return process(data);
                 });
             }
@@ -126,9 +125,8 @@
                 $('input.typeahead').typeahead({
                     source:  function (query, process) {
                         return $.get(path, { query: query }, function (data) {
-                            console.log(Object.keys(data))
-                                return process(data);
-                            });
+                            return process(data);
+                        });
                     }
                 });
             },

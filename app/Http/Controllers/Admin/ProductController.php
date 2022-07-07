@@ -103,7 +103,6 @@ class ProductController extends Controller
             'tax' => 'nullable',
             'tax_method' => 'nullable',
             'details' => 'nullable|max:255',
-            'discount' => 'nullable|integer',
         ]);
     
         $imageName = null;
@@ -127,7 +126,6 @@ class ProductController extends Controller
             'tax_id' => $request->tax,
             'tax_method' => $request->tax_method,
             'details' => $request->details,
-            'discount'  => $request->discount,
         ]);
         $notification = notify('product has been added');
         return redirect()->route('products.index')->with($notification);
@@ -174,7 +172,6 @@ class ProductController extends Controller
             'tax' => 'nullable',
             'tax_method' => 'nullable',
             'details' => 'nullable|max:255',
-            'discount'  => 'nullable|integer',
         ]);
         $imageName = $product->image;
         if($request->hasFile('image')){
@@ -197,7 +194,6 @@ class ProductController extends Controller
             'tax_id' => $request->tax,
             'tax_method' => $request->tax_method,
             'details' => $request->details,
-            'discount' => $request->discount,
         ]);
         $notification = notify('product has been added');
         return redirect()->route('products.index')->with($notification);

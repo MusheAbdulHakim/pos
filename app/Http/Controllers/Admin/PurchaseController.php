@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use App\Models\Product;
 use App\Models\Purchase;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\If_;
+use App\Models\PurchaseProduct;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Product;
-use App\Models\PurchaseProduct;
-use PhpParser\Node\Stmt\If_;
 use Yajra\DataTables\Facades\DataTables;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class PurchaseController extends Controller
 {
@@ -68,6 +69,7 @@ class PurchaseController extends Controller
     {
         $query = $request->get('query');
         $data = Product::where('name', 'LIKE', '%'. $query. '%')
+                        ->orWhere('barcode','LIKE','%'. $query. '%')
                         ->get();
         return response()->json($data);
     }
@@ -102,9 +104,9 @@ class PurchaseController extends Controller
             'products' => 'required',
             'note' => 'nullable|min:3|max:255',
         ]);
-        
+        $reference = IdGenerator::generate(['table' => 'purchases','field'=>'reference', 'length' => 7, 'prefix' =>'Pur-']);
         Purchase::create([
-            'reference' => uniqid('Pur-'),
+            'reference' => $reference,
             'status' => $request->status,
             'supplier_id' => $request->supplier,
             'products' => $request->products,

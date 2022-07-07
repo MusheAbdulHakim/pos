@@ -25,7 +25,8 @@ class UserController extends Controller
             return DataTables::of($data)
                     ->addIndexColumn()
                     ->addColumn('avatar',function($user){
-                        return '<img src="'.asset('storage/users/'.$user->avatar).'" class="rounded-circle avatar-md" />';
+                        $img = !empty($user->avatar) ? asset('storage/users/'.$user->avatar): asset('assets/images/users/avatar-1.jpg');
+                        return '<img src="'.$img.'" class="rounded-circle avatar-md" />';
                     })
                     ->addColumn('action',function ($user){
                         $editbtn = '<a href="'.route('users.edit',$user->id).'" class="edit"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>';

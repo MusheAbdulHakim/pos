@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\CustomerTypeController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Admin\ExpenseCategoryController;
 use App\Http\Controllers\Admin\ProductCategoryController;
+use App\Http\Controllers\Admin\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,6 +89,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('suppliers',SupplierController::class);
     Route::resource('expenses',ExpenseController::class);
     Route::resource('products', ProductController::class);
+    Route::resource('purchases',PurchaseController::class);
+    Route::get('purchase-autocomplete',[PurchaseController::class,'autocomplete'])->name('purchase-autocomplete');
 
     Route::get('settings',[SettingController::class,'index'])->name('settings');
 
