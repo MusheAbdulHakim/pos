@@ -15,8 +15,6 @@
 <script src="{{asset('assets/libs/select2/js/select2.min.js')}}"></script>
 
 <script>
-    $('.select2').select2({
-        allowClear: true
-    });
+    $('.select2').select2({});
 </script>
 @endpush

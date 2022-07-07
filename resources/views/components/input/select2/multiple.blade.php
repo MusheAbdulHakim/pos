@@ -6,7 +6,7 @@
 
 <select name="{{$name}}" class="form-control select2" multiple="multiple" data-placeholder="Choose ..." id="{{$name}}">
     @foreach ($options as $option)
-        <option>{{$option->$key}}</option><option selected disabled>No Tax Method </option>
+        <option>{{$option->$key}}</option>
     @endforeach
 </select>
 
