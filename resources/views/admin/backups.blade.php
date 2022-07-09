@@ -17,7 +17,7 @@
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title">Users List</h4>
+            <h4 class="card-title">Backup List</h4>
 
             <table id="datatable" class="table table-bordered dt-responsive nowrap"
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">

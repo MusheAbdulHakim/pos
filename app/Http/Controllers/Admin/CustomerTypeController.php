@@ -31,7 +31,7 @@ class CustomerTypeController extends Controller
                             $deletebtn = '';
                         }
                         $btn = $editbtn.' '.$deletebtn;
-                        return $btn;
+                        return "<div class='text-center'>".$btn."</div>";
                     })
                     ->rawColumns(['action'])
                     ->make(true);

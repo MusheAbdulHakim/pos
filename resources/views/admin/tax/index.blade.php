@@ -21,7 +21,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Rate(%)</th>
-                            <th>Action</th>
+                            <th class="text-center">Action</th>
                         </tr>
                     </thead>
 

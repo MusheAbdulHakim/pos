@@ -21,7 +21,11 @@ class BrandController extends Controller
             return DataTables::of(Brand::get())
                     ->addIndexColumn()
                     ->addColumn('image',function ($row){
-                        $td = '<img class="avatar-md" src="'.asset('storage/brand/'.$row->image).'" />';
+                        $src = asset('assets/images/users/avatar-3.jpg');
+                        if(!empty($row->image)){
+                            $src = asset('storage/brand/'.$row->image);
+                        }
+                        $td = '<img class="avatar-md" src="'.$src.'" />';
                         return $td;
                     })
                     ->addColumn('action',function ($row){
@@ -34,7 +38,7 @@ class BrandController extends Controller
                             $deletebtn = '';
                         }
                         $btn = $editbtn.' '.$deletebtn;
-                        return $btn;
+                        return "<div class='text-center'>".$btn."</div>";
                     })
                     ->rawColumns(['image','action'])
                     ->make(true);
