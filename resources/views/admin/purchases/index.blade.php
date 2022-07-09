@@ -19,11 +19,11 @@
                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr>
-                        <th>Date</th>
                         <th>Reference</th>
                         <th>Supplier</th>
                         <th>Product(s)</th>
                         <th>Purchase Status</th>
+                        <th>Date</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -54,11 +54,11 @@
             serverSide: true,
             ajax: "{{route('purchases.index')}}",
             columns: [
-                {data: 'date', name: 'date'},
                 {data: 'reference', name: 'reference'},
                 {data: 'supplier', name: 'supplier'},
                 {data: 'products', name: 'products'},
                 {data: 'status', name: 'status'},
+                {data: 'date', name: 'date'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
             
