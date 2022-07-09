@@ -26,7 +26,7 @@ class ProductController extends Controller
                     if(!empty($row->image)){
                         $src = asset('storage/product/'.$row->image);
                     }
-                    $td = '<img class="avatar-md" src="'.$src.'" />';
+                    $td = '<img class="avatar-md w-50 h-50" src="'.$src.'" />';
                     return $td;
                 })
                 ->addColumn('brand',function ($row){
