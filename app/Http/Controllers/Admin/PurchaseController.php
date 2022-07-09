@@ -104,7 +104,7 @@ class PurchaseController extends Controller
             'products' => 'required',
             'note' => 'nullable|min:3|max:255',
         ]);
-        $reference = IdGenerator::generate(['table' => 'purchases','field'=>'reference', 'length' => 7, 'prefix' =>'Pur-']);
+        $reference = IdGenerator::generate(['table' => 'purchases','field'=>'reference', 'length' => 10, 'prefix' =>'Pur-']);
         Purchase::create([
             'reference' => $reference,
             'status' => $request->status,
