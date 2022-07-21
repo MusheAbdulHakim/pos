@@ -32,6 +32,8 @@
     @else
     <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
     @endif
+    <!-- Custom Css-->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 @if (AppSettings::get('layout') == 'detached')  
 <body data-layout="detached" data-topbar="colored">
@@ -242,6 +244,8 @@
             });          
         });
     </script>
+    <!-- Custom js -->
+    <script src="{{asset('js/app.js')}}"></script>
     <!-- Page Js -->
     @stack('page-js')
     
